@@ -50,10 +50,7 @@ superpower: "reads people like stack traces"
 
 ### 🧰 Tools & Platforms
 ![Git](https://img.shields.io/badge/Git-0a0a0f?style=flat-square&logo=git&logoColor=ff4d6d)
-![Figma](https://img.shields.io/badge/Figma-0a0a0f?style=flat-square&logo=figma&logoColor=ff4d6d)
 ![VSCode](https://img.shields.io/badge/VSCode-0a0a0f?style=flat-square&logo=visual-studio-code&logoColor=00e5cc)
-![GCP](https://img.shields.io/badge/GCP-0a0a0f?style=flat-square&logo=google-cloud&logoColor=7c5cfc)
-![Android Studio](https://img.shields.io/badge/Android_Studio-0a0a0f?style=flat-square&logo=android-studio&logoColor=00e5cc)
 
 ---
 
@@ -104,10 +101,8 @@ superpower: "reads people like stack traces"
 
 | Game | Status |
 |------|--------|
-| 🎮 BGMI | Daily grind @ 10 PM · rank pusher |
+| 🎮 BGMI | Daily grind @ 8:30 PM · initiator |
 | ⚽ eFootball | Competitive · tactical · passionate |
-
-> Dream job: Testing high-end FPS games with killer graphics and physics engines.
 
 ---
 
