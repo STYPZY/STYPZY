@@ -1,136 +1,13 @@
 <svg width="860" height="320" viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <clipPath id="scan-clip">
-      <rect width="860" height="320"/>
-    </clipPath>
-    <style>
-      /* SCAN LINE */
-      .scan {
-        animation: scandown 3.5s linear infinite;
-      }
-      @keyframes scandown {
-        0%   { transform: translateY(-4px); opacity: 0.7; }
-        90%  { opacity: 0.3; }
-        100% { transform: translateY(324px); opacity: 0; }
-      }
 
-      /* CORNER PULSE */
-      .ctl { animation: cornerpulse 2.5s ease-in-out infinite; }
-      .ctr { animation: cornerpulse 2.5s ease-in-out infinite 0.6s; }
-      .cbl { animation: cornerpulse 2.5s ease-in-out infinite 1.2s; }
-      .cbr { animation: cornerpulse 2.5s ease-in-out infinite 1.8s; }
-      @keyframes cornerpulse {
-        0%,100% { opacity: 0.9; }
-        50%      { opacity: 0.35; }
-      }
-
-      /* ONLINE DOT BLINK */
-      .online-dot { animation: blink 1.8s ease-in-out infinite; }
-      @keyframes blink {
-        0%,100% { opacity: 1; }
-        50%      { opacity: 0.2; }
-      }
-
-      /* GLITCH on STYPZY */
-      .glitch-base { animation: glitch-shake 6s infinite; }
-      @keyframes glitch-shake {
-        0%,89%,100% { transform: translate(0,0); }
-        90%          { transform: translate(2px, -1px); }
-        91%          { transform: translate(-2px, 1px); }
-        92%          { transform: translate(0,0); }
-        95%          { transform: translate(1px, 2px); }
-        96%          { transform: translate(-1px,-1px); }
-        97%          { transform: translate(0,0); }
-      }
-
-      /* GLITCH SLICE 1 */
-      .glitch-r {
-        animation: glitch-r 6s infinite;
-      }
-      @keyframes glitch-r {
-        0%,89%,100% { opacity: 0; transform: translate(0,0); }
-        90%  { opacity: 0.7; transform: translate(4px, 0); clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%); fill: #ff4d8d; }
-        91%  { opacity: 0; }
-        94%  { opacity: 0.5; transform: translate(-3px,0); clip-path: polygon(0 55%, 100% 55%, 100% 70%, 0 70%); }
-        95%  { opacity: 0; }
-      }
-
-      /* GLITCH SLICE 2 */
-      .glitch-g {
-        animation: glitch-g 6s infinite;
-      }
-      @keyframes glitch-g {
-        0%,89%,100% { opacity: 0; transform: translate(0,0); }
-        90%  { opacity: 0; }
-        91%  { opacity: 0.6; transform: translate(-4px, 0); clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); fill: #00d4aa; }
-        92%  { opacity: 0; }
-        96%  { opacity: 0.4; transform: translate(3px, 0); clip-path: polygon(0 10%, 100% 10%, 100% 25%, 0 25%); }
-        97%  { opacity: 0; }
-      }
-
-      /* STAT BOX FADE IN */
-      .stat1 { animation: fadein 0.8s ease-out 0.3s both; }
-      .stat2 { animation: fadein 0.8s ease-out 0.6s both; }
-      .stat3 { animation: fadein 0.8s ease-out 0.9s both; }
-      @keyframes fadein {
-        from { opacity: 0; transform: translateX(12px); }
-        to   { opacity: 1; transform: translateX(0); }
-      }
-
-      /* BIO LINES FADE IN */
-      .bio1 { animation: fadein-up 0.7s ease-out 0.4s both; }
-      .bio2 { animation: fadein-up 0.7s ease-out 0.65s both; }
-      .bio3 { animation: fadein-up 0.7s ease-out 0.9s both; }
-      @keyframes fadein-up {
-        from { opacity: 0; transform: translateY(8px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-
-      /* NAME FADE IN */
-      .name-in { animation: namein 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both; }
-      @keyframes namein {
-        from { opacity: 0; transform: translateY(-16px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-
-      /* ROLE TAGS */
-      .tag1 { animation: fadein-up 0.5s ease-out 0.5s both; }
-      .tag2 { animation: fadein-up 0.5s ease-out 0.65s both; }
-      .tag3 { animation: fadein-up 0.5s ease-out 0.8s both; }
-
-      /* BORDER GLOW PULSE */
-      .outer-border { animation: borderglow 4s ease-in-out infinite; }
-      @keyframes borderglow {
-        0%,100% { opacity: 0.2; }
-        50%      { opacity: 0.55; }
-      }
-
-      /* TICKER */
-      .ticker-text { animation: ticker 14s linear infinite; }
-      @keyframes ticker {
-        0%   { transform: translateX(200px); }
-        100% { transform: translateX(-420px); }
-      }
-
-      /* IDENTITY LABEL */
-      .id-label { animation: fadein 1s ease-out 0.2s both; }
-
-      /* GRID FADE */
-      .grid-lines { animation: fadein 1.5s ease-out 0s both; }
-
-      /* STATUS ROW */
-      .status-row { animation: fadein-up 0.6s ease-out 1.1s both; }
-
-      /* BOTTOM META */
-      .meta-row { animation: fadein 0.8s ease-out 1.2s both; }
-    </style>
-  </defs>
+  <clipPath id="scan-clip"><rect width="860" height="320"/></clipPath>
+  <clipPath id="ticker-clip"><rect x="430" y="285" width="400" height="18"/></clipPath>
 
   <!-- BG -->
   <rect width="860" height="320" fill="#07070f" rx="12"/>
 
   <!-- GRID -->
-  <g class="grid-lines" stroke="#6c50ff" stroke-width="0.4" opacity="0.07">
+  <g stroke="#6c50ff" stroke-width="0.4" opacity="0.07">
     <line x1="40" y1="0" x2="40" y2="320"/><line x1="80" y1="0" x2="80" y2="320"/>
     <line x1="120" y1="0" x2="120" y2="320"/><line x1="160" y1="0" x2="160" y2="320"/>
     <line x1="200" y1="0" x2="200" y2="320"/><line x1="240" y1="0" x2="240" y2="320"/>
@@ -149,112 +26,143 @@
 
   <!-- SCAN LINE -->
   <g clip-path="url(#scan-clip)">
-    <rect class="scan" x="0" y="0" width="860" height="3" fill="#6c50ff" opacity="0.45" rx="1"/>
+    <rect x="0" y="0" width="860" height="3" fill="#6c50ff" opacity="0.5" rx="1">
+      <animateTransform attributeName="transform" type="translate" from="0,0" to="0,324" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.3;0" dur="3s" repeatCount="indefinite"/>
+    </rect>
   </g>
 
-  <!-- CORNER BRACKETS -->
-  <polyline class="ctl" points="14,62 14,14 62,14" fill="none" stroke="#6c50ff" stroke-width="2.5" stroke-linecap="square"/>
-  <polyline class="ctr" points="798,14 846,14 846,62" fill="none" stroke="#00d4aa" stroke-width="2.5" stroke-linecap="square"/>
-  <polyline class="cbl" points="14,258 14,306 62,306" fill="none" stroke="#00d4aa" stroke-width="2.5" stroke-linecap="square"/>
-  <polyline class="cbr" points="798,306 846,306 846,258" fill="none" stroke="#6c50ff" stroke-width="2.5" stroke-linecap="square"/>
+  <!-- CORNER TL — purple pulse -->
+  <polyline points="14,62 14,14 62,14" fill="none" stroke="#6c50ff" stroke-width="2.5" stroke-linecap="square">
+    <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" repeatCount="indefinite"/>
+  </polyline>
+
+  <!-- CORNER TR — teal pulse offset -->
+  <polyline points="798,14 846,14 846,62" fill="none" stroke="#00d4aa" stroke-width="2.5" stroke-linecap="square">
+    <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" begin="0.6s" repeatCount="indefinite"/>
+  </polyline>
+
+  <!-- CORNER BL — teal pulse offset -->
+  <polyline points="14,258 14,306 62,306" fill="none" stroke="#00d4aa" stroke-width="2.5" stroke-linecap="square">
+    <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" begin="1.2s" repeatCount="indefinite"/>
+  </polyline>
+
+  <!-- CORNER BR — purple pulse offset -->
+  <polyline points="798,306 846,306 846,258" fill="none" stroke="#6c50ff" stroke-width="2.5" stroke-linecap="square">
+    <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" begin="1.8s" repeatCount="indefinite"/>
+  </polyline>
 
   <!-- IDENTITY LABEL -->
-  <g class="id-label">
-    <line x1="40" y1="46" x2="68" y2="46" stroke="#6c50ff" stroke-width="1.5"/>
-    <text x="74" y="51" font-family="'Courier New', monospace" font-size="11" fill="#6c50ff" letter-spacing="3">IDENTITY CONFIRMED</text>
-  </g>
+  <line x1="40" y1="46" x2="68" y2="46" stroke="#6c50ff" stroke-width="1.5"/>
+  <text x="74" y="51" font-family="Courier New,monospace" font-size="11" fill="#6c50ff" letter-spacing="3">IDENTITY CONFIRMED</text>
 
-  <!-- NAME GLITCH GROUP -->
-  <!-- Base name -->
-  <g class="name-in glitch-base">
-    <text x="40" y="130" font-family="'Arial Black','Impact',sans-serif" font-size="82" font-weight="900" fill="#ffffff" letter-spacing="-2">ST</text>
-    <text x="190" y="130" font-family="'Arial Black','Impact',sans-serif" font-size="82" font-weight="900" fill="#00d4aa" letter-spacing="-2">Y</text>
-    <text x="238" y="130" font-family="'Arial Black','Impact',sans-serif" font-size="82" font-weight="900" fill="#ffffff" letter-spacing="-2">P</text>
-    <text x="295" y="130" font-family="'Arial Black','Impact',sans-serif" font-size="82" font-weight="900" fill="#6c50ff" letter-spacing="-2">Z</text>
-    <text x="350" y="130" font-family="'Arial Black','Impact',sans-serif" font-size="82" font-weight="900" fill="#ffffff" letter-spacing="-2">Y</text>
-  </g>
-  <!-- Glitch overlay R -->
-  <g class="glitch-r" opacity="0">
-    <text x="40" y="130" font-family="'Arial Black','Impact',sans-serif" font-size="82" font-weight="900" fill="#ff4d8d" letter-spacing="-2">STYPZY</text>
-  </g>
-  <!-- Glitch overlay G -->
-  <g class="glitch-g" opacity="0">
-    <text x="40" y="130" font-family="'Arial Black','Impact',sans-serif" font-size="82" font-weight="900" fill="#00d4aa" letter-spacing="-2">STYPZY</text>
-  </g>
+  <!-- NAME: ST -->
+  <text x="40" y="130" font-family="Arial Black,Impact,sans-serif" font-size="82" font-weight="900" fill="#ffffff" letter-spacing="-2">ST</text>
 
-  <!-- ROLE TAGS -->
-  <g class="tag1">
-    <rect x="40" y="148" width="112" height="26" rx="5" fill="#6c50ff" opacity="0.18"/>
-    <rect x="40" y="148" width="112" height="26" rx="5" fill="none" stroke="#6c50ff" stroke-width="1"/>
-    <text x="96" y="165" font-family="'Courier New',monospace" font-size="10" fill="#a78bfa" text-anchor="middle" letter-spacing="1.5" font-weight="bold">QA ANALYST</text>
-  </g>
-  <g class="tag2">
-    <rect x="160" y="148" width="106" height="26" rx="5" fill="#ff4d8d" opacity="0.12"/>
-    <rect x="160" y="148" width="106" height="26" rx="5" fill="none" stroke="#ff4d8d" stroke-width="1"/>
-    <text x="213" y="165" font-family="'Courier New',monospace" font-size="10" fill="#fb7fab" text-anchor="middle" letter-spacing="1.5" font-weight="bold">PEN TESTER</text>
-  </g>
-  <g class="tag3">
-    <rect x="274" y="148" width="130" height="26" rx="5" fill="#00d4aa" opacity="0.1"/>
-    <rect x="274" y="148" width="130" height="26" rx="5" fill="none" stroke="#00d4aa" stroke-width="1"/>
-    <text x="339" y="165" font-family="'Courier New',monospace" font-size="10" fill="#34d4b8" text-anchor="middle" letter-spacing="1.5" font-weight="bold">FULL STACK DEV</text>
-  </g>
+  <!-- NAME: Y teal — color flicker -->
+  <text x="190" y="130" font-family="Arial Black,Impact,sans-serif" font-size="82" font-weight="900" letter-spacing="-2">
+    <animate attributeName="fill" values="#00d4aa;#ffffff;#00d4aa;#00d4aa;#ff4d8d;#00d4aa" dur="5s" repeatCount="indefinite"/>
+    Y
+  </text>
+
+  <!-- NAME: P -->
+  <text x="238" y="130" font-family="Arial Black,Impact,sans-serif" font-size="82" font-weight="900" fill="#ffffff" letter-spacing="-2">P</text>
+
+  <!-- NAME: Z purple — color flicker -->
+  <text x="295" y="130" font-family="Arial Black,Impact,sans-serif" font-size="82" font-weight="900" letter-spacing="-2">
+    <animate attributeName="fill" values="#6c50ff;#6c50ff;#ffffff;#6c50ff;#6c50ff;#ff4d8d;#6c50ff" dur="6s" repeatCount="indefinite"/>
+    Z
+  </text>
+
+  <!-- NAME: Y -->
+  <text x="350" y="130" font-family="Arial Black,Impact,sans-serif" font-size="82" font-weight="900" fill="#ffffff" letter-spacing="-2">Y</text>
+
+  <!-- GLITCH SLICE — flashes across name -->
+  <rect x="40" y="70" width="360" height="18" fill="#ff4d8d" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0.35;0;0.2;0;0" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="70;70;70;70;70;70;70;70;88;95;75;70;70" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="height" values="18;18;18;18;18;18;18;18;10;6;14;18;18" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="40" y="100" width="360" height="12" fill="#00d4aa" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0.3;0;0.2;0;0;0" dur="5s" begin="0.1s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="100;100;100;100;100;100;100;108;100;118;100;100;100" dur="5s" begin="0.1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ROLE TAG: QA ANALYST -->
+  <rect x="40" y="148" width="112" height="26" rx="5" fill="#6c50ff" opacity="0.18"/>
+  <rect x="40" y="148" width="112" height="26" rx="5" fill="none" stroke="#6c50ff" stroke-width="1">
+    <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <text x="96" y="165" font-family="Courier New,monospace" font-size="10" fill="#a78bfa" text-anchor="middle" letter-spacing="1.5" font-weight="bold">QA ANALYST</text>
+
+  <!-- ROLE TAG: PEN TESTER -->
+  <rect x="160" y="148" width="106" height="26" rx="5" fill="#ff4d8d" opacity="0.12"/>
+  <rect x="160" y="148" width="106" height="26" rx="5" fill="none" stroke="#ff4d8d" stroke-width="1">
+    <animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="213" y="165" font-family="Courier New,monospace" font-size="10" fill="#fb7fab" text-anchor="middle" letter-spacing="1.5" font-weight="bold">PEN TESTER</text>
+
+  <!-- ROLE TAG: FULL STACK DEV -->
+  <rect x="274" y="148" width="130" height="26" rx="5" fill="#00d4aa" opacity="0.1"/>
+  <rect x="274" y="148" width="130" height="26" rx="5" fill="none" stroke="#00d4aa" stroke-width="1">
+    <animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="1s" repeatCount="indefinite"/>
+  </rect>
+  <text x="339" y="165" font-family="Courier New,monospace" font-size="10" fill="#34d4b8" text-anchor="middle" letter-spacing="1.5" font-weight="bold">FULL STACK DEV</text>
 
   <!-- BIO LINES -->
-  <g class="bio1">
-    <text x="40" y="204" font-family="'Courier New',monospace" font-size="13" fill="#7a7a9a">Builds things that </text>
-    <text x="188" y="204" font-family="'Courier New',monospace" font-size="13" fill="#00d4aa">work.</text>
-  </g>
-  <g class="bio2">
-    <text x="40" y="222" font-family="'Courier New',monospace" font-size="13" fill="#7a7a9a">Tests things that </text>
-    <text x="180" y="222" font-family="'Courier New',monospace" font-size="13" fill="#6c50ff">break.</text>
-  </g>
-  <g class="bio3">
-    <text x="40" y="240" font-family="'Courier New',monospace" font-size="13" fill="#7a7a9a">Breaks things so others </text>
-    <text x="232" y="240" font-family="'Courier New',monospace" font-size="13" fill="#00d4aa">can't.</text>
-  </g>
+  <text x="40" y="204" font-family="Courier New,monospace" font-size="13" fill="#7a7a9a">Builds things that <tspan fill="#00d4aa">work.</tspan></text>
+  <text x="40" y="222" font-family="Courier New,monospace" font-size="13" fill="#7a7a9a">Tests things that <tspan fill="#6c50ff">break.</tspan></text>
+  <text x="40" y="240" font-family="Courier New,monospace" font-size="13" fill="#7a7a9a">Breaks things so others <tspan fill="#00d4aa">can't.</tspan></text>
 
-  <!-- ONLINE STATUS -->
-  <g class="status-row">
-    <circle class="online-dot" cx="42" cy="263" r="5" fill="#00e576"/>
-    <text x="53" y="268" font-family="'Courier New',monospace" font-size="11" fill="#5a5a7a" letter-spacing="0.5">online — open to collabs</text>
-  </g>
+  <!-- ONLINE DOT BLINK -->
+  <circle cx="42" cy="263" r="5" fill="#00e576">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <text x="53" y="268" font-family="Courier New,monospace" font-size="11" fill="#5a5a7a">online — open to collabs</text>
 
   <!-- BOTTOM META -->
-  <g class="meta-row">
-    <circle cx="42" cy="296" r="3.5" fill="#6c50ff"/>
-    <text x="52" y="300" font-family="'Courier New',monospace" font-size="10.5" fill="#9090b8">Kerala, India</text>
-    <circle cx="150" cy="296" r="3.5" fill="#00d4aa"/>
-    <text x="160" y="300" font-family="'Courier New',monospace" font-size="10.5" fill="#9090b8">vyshnav govind</text>
-    <circle cx="278" cy="296" r="3.5" fill="#ff4d8d"/>
-    <text x="288" y="300" font-family="'Courier New',monospace" font-size="10.5" fill="#9090b8">vigilante (secret)</text>
-  </g>
+  <circle cx="42" cy="296" r="3.5" fill="#6c50ff"/>
+  <text x="52" y="300" font-family="Courier New,monospace" font-size="10.5" fill="#9090b8">Kerala, India</text>
+  <circle cx="150" cy="296" r="3.5" fill="#00d4aa"/>
+  <text x="160" y="300" font-family="Courier New,monospace" font-size="10.5" fill="#9090b8">vyshnav govind</text>
+  <circle cx="278" cy="296" r="3.5" fill="#ff4d8d"/>
+  <text x="288" y="300" font-family="Courier New,monospace" font-size="10.5" fill="#9090b8">vigilante (secret)</text>
 
   <!-- TICKER -->
-  <clipPath id="ticker-clip"><rect x="430" y="288" width="390" height="18"/></clipPath>
   <g clip-path="url(#ticker-clip)">
-    <text class="ticker-text" x="0" y="300" font-family="'Courier New',monospace" font-size="10" fill="#3a3a5a" letter-spacing="1">[ QA · PENTEST · FULLSTACK · OSINT · SECURITY · GAMING ]</text>
+    <text y="300" font-family="Courier New,monospace" font-size="10" fill="#3a3a5a" letter-spacing="1">
+      [ QA · PENTEST · FULLSTACK · OSINT · SECURITY · GAMING ]
+      <animateTransform attributeName="transform" type="translate" from="860,0" to="-460,0" dur="14s" repeatCount="indefinite"/>
+    </text>
   </g>
 
-  <!-- STAT BOXES -->
-  <g class="stat1">
-    <rect x="672" y="50" width="90" height="60" rx="8" fill="#6c50ff" opacity="0.1"/>
-    <rect x="672" y="50" width="90" height="60" rx="8" fill="none" stroke="#6c50ff" stroke-width="1" opacity="0.5"/>
-    <text x="717" y="84" font-family="'Arial Black',sans-serif" font-size="24" font-weight="900" fill="#a78bfa" text-anchor="middle">5+</text>
-    <text x="717" y="100" font-family="'Courier New',monospace" font-size="9" fill="#5a5a7a" text-anchor="middle" letter-spacing="2">PROJECTS</text>
-  </g>
-  <g class="stat2">
-    <rect x="672" y="120" width="90" height="60" rx="8" fill="#00d4aa" opacity="0.08"/>
-    <rect x="672" y="120" width="90" height="60" rx="8" fill="none" stroke="#00d4aa" stroke-width="1" opacity="0.4"/>
-    <text x="717" y="154" font-family="'Arial Black',sans-serif" font-size="24" font-weight="900" fill="#34d4b8" text-anchor="middle">3</text>
-    <text x="717" y="170" font-family="'Courier New',monospace" font-size="9" fill="#5a5a7a" text-anchor="middle" letter-spacing="2">DOMAINS</text>
-  </g>
-  <g class="stat3">
-    <rect x="672" y="190" width="90" height="60" rx="8" fill="#6c50ff" opacity="0.1"/>
-    <rect x="672" y="190" width="90" height="60" rx="8" fill="none" stroke="#6c50ff" stroke-width="1" opacity="0.5"/>
-    <text x="717" y="224" font-family="'Arial Black',sans-serif" font-size="24" font-weight="900" fill="#a78bfa" text-anchor="middle">∞</text>
-    <text x="717" y="240" font-family="'Courier New',monospace" font-size="9" fill="#5a5a7a" text-anchor="middle" letter-spacing="2">BUGS HUNTED</text>
-  </g>
+  <!-- STAT BOX: PROJECTS -->
+  <rect x="672" y="50" width="90" height="60" rx="8" fill="#6c50ff" opacity="0.1"/>
+  <rect x="672" y="50" width="90" height="60" rx="8" fill="none" stroke="#6c50ff" stroke-width="1">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="717" y="84" font-family="Arial Black,sans-serif" font-size="24" font-weight="900" fill="#a78bfa" text-anchor="middle">5+</text>
+  <text x="717" y="100" font-family="Courier New,monospace" font-size="9" fill="#5a5a7a" text-anchor="middle" letter-spacing="2">PROJECTS</text>
 
-  <!-- OUTER BORDER GLOW -->
-  <rect class="outer-border" width="860" height="320" rx="12" fill="none" stroke="#6c50ff" stroke-width="1.5"/>
+  <!-- STAT BOX: DOMAINS -->
+  <rect x="672" y="120" width="90" height="60" rx="8" fill="#00d4aa" opacity="0.08"/>
+  <rect x="672" y="120" width="90" height="60" rx="8" fill="none" stroke="#00d4aa" stroke-width="1">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="717" y="154" font-family="Arial Black,sans-serif" font-size="24" font-weight="900" fill="#34d4b8" text-anchor="middle">3</text>
+  <text x="717" y="170" font-family="Courier New,monospace" font-size="9" fill="#5a5a7a" text-anchor="middle" letter-spacing="2">DOMAINS</text>
+
+  <!-- STAT BOX: BUGS -->
+  <rect x="672" y="190" width="90" height="60" rx="8" fill="#6c50ff" opacity="0.1"/>
+  <rect x="672" y="190" width="90" height="60" rx="8" fill="none" stroke="#6c50ff" stroke-width="1">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="717" y="224" font-family="Arial Black,sans-serif" font-size="24" font-weight="900" fill="#a78bfa" text-anchor="middle">∞</text>
+  <text x="717" y="240" font-family="Courier New,monospace" font-size="9" fill="#5a5a7a" text-anchor="middle" letter-spacing="2">BUGS HUNTED</text>
+
+  <!-- OUTER BORDER PULSE -->
+  <rect width="860" height="320" rx="12" fill="none" stroke="#6c50ff" stroke-width="1.5">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
 </svg>
