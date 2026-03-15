@@ -1,26 +1,8 @@
-<!-- HEADER BANNER -->
+<!-- HEADER -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0,07070f,100,07070f&height=200&text=STYPZY&fontSize=90&fontColor=ffffff&fontAlignY=55&desc=QA%20ANALYST%20%20%7C%20%20PEN%20TESTER%20%20%7C%20%20FULL%20STACK%20DEV&descSize=14&descAlignY=78&descColor=6c50ff&stroke=6c50ff&strokeWidth=1" width="100%"/>
+  <img src="./stypzy_banner.svg" width="100%" alt="STYPZY Banner"/>
 </div>
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&size=16&pause=2000&color=00D4AA&center=true&vCenter=true&width=600&lines=builds+things+that+work.+tests+things+that+break.;breaks+things+so+others+can't.;Kerala+%E2%86%92+Bangalore+%7C+open+to+collabs;identity+confirmed+%3A+stypzy" alt="Typing SVG" />
-</div>
-
-<br/>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/%E2%96%A0_QA_ANALYST-07070f?style=for-the-badge&logoColor=a78bfa&labelColor=07070f&color=6c50ff"/>
-  <img src="https://img.shields.io/badge/%E2%96%A0_PEN_TESTER-07070f?style=for-the-badge&logoColor=fb7fab&labelColor=07070f&color=ff4d8d"/>
-  <img src="https://img.shields.io/badge/%E2%96%A0_FULL_STACK_DEV-07070f?style=for-the-badge&logoColor=34d4b8&labelColor=07070f&color=00d4aa"/>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Kerala%2C_India-07070f?style=flat-square&logoColor=6c50ff"/>
-  <img src="https://img.shields.io/badge/Open_to_Collabs-07070f?style=flat-square&logoColor=00d4aa"/>
-  <img src="https://img.shields.io/badge/Vigilante_(secret)-07070f?style=flat-square&logoColor=ff4d8d"/>
-  <img src="https://komarev.com/ghpvc/?username=Midhun-Nk&style=flat-square&color=6c50ff" alt="Profile visits"/>
-</p>
 
 ---
 
