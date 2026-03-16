@@ -123,8 +123,6 @@ superpower: "reads people like stack traces"
   </a>
 </p>
 
-<img src="https://komarev.com/ghpvc/?username=Midhun-Nk&style=flat-square&color=7c5cfc" alt="Profile visits"/>
-
 ---
 
 <div align="center">
